@@ -64,7 +64,7 @@ VALIDATE $? "moving to app directory"
 unzip /tmp/backend.zip 
 VALIDATE $? "unzip app directory"
 
-cp backend-service \Users\hi\Documents\Shellscript\repos\ExpanceProject\backend-servce /etc/systemd/system/backend.service
+cp backend-service \Users\hi\Documents\Shellscript\repos\ExpanceProject\backend-servce
 
 dnf install mysql &>>$LOG_FILE_NAME
 VALIDATE $? "install mysql client"
