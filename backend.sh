@@ -65,6 +65,9 @@ VALIDATE $? "removing to app directory files"
 unzip /tmp/backend.zip 
 VALIDATE $? "unzip app directory"
 
+npm install
+VALIDATE $? "install npm"
+
 cp /home/ec2-user/ExpanceProject/backend-servce /etc/systemd/system/backend.service
 
 dnf install mysql -y &>>$LOG_FILE_NAME
