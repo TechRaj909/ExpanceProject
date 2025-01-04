@@ -76,6 +76,5 @@ VALIDATE $? "reaload  backend "
 systemctl enable backend &>>$LOG_FILE_NAME
 VALIDATE $? "enable backend "
 
-systemctl restart backend &>>$LOG_FILE_NAME
-VALIDATE $? "starting backend  "
-
+systemctl start backend &>>$LOG_FILE_NAME
+VALIDATE $? "starting backend"
