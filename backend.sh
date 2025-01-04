@@ -48,18 +48,19 @@ then
     useradd expense &>>$LOG_FILE_NAME
     VALIDATE $? "add user expance"
 else 
-echo -e "user expance already existed"
+    echo -e "user expance already existed"
 fi
-    mkdir -p /app &>>$LOG_FILE_NAME
-    VALIDATE $? "mkdir app" 
+
+mkdir -p /app &>>$LOG_FILE_NAME
+VALIDATE $? "mkdir app" 
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE_NAME
 VALIDATE $? "download nodejs"
 
 cd /app
-rm -rf /app/*
 
-VALIDATE $? "moving to app directory"
+rm -rf /app/*
+VALIDATE $? "removing to app directory files"
 
 unzip /tmp/backend.zip 
 VALIDATE $? "unzip app directory"
