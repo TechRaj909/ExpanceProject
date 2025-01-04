@@ -69,7 +69,7 @@ cp /home/ec2-user/ExpanceProject/backend-servce /etc/systemd/system/backend.serv
 dnf install mysql -y &>>$LOG_FILE_NAME
 VALIDATE $? "install mysql client"
 
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pExpenseApp@1 < /app/schema/backend.sql
+mysql -h mysql.daws82s.fun -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "settingup mysql "
 
 systemctl demon-reload &>>$LOG_FILE_NAME
