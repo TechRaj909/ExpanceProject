@@ -72,7 +72,7 @@ VALIDATE $? "install mysql client"
 mysql -h mysql.daws82s.fun -uroot -pExpenseApp@1 < /app/schema/backend.sql
 VALIDATE $? "settingup mysql "
 
-systemctl demon-reload &>>$LOG_FILE_NAME
+systemctl daemon-reload &>>$LOG_FILE_NAME
 VALIDATE $? "reaload  backend "
 
 systemctl enable backend &>>$LOG_FILE_NAME
