@@ -46,11 +46,11 @@ do
 done
 
 dnf install mysql-server -y &>>$LOG_FILE_NAME
-VALIDATE($? "installing mysql server")
+VALIDATE( $? "installing mysql server" )
 systemctl enable mysqld &>>$LOG_FILE_NAME
-VALIDATE($? "enable mysql server")
+VALIDATE( $? "enable mysql server" )
 systemctl start mysqld &>>$LOG_FILE_NAME
-VALIDATE($? "started mysql server")
+VALIDATE( $? "started mysql server" )
 mysql_secure_installation --set-root-pass ExpenseApp@1 
-VALIDATE($? "password updating mysql server")
+VALIDATE( $? "password updating mysql server" )
 
