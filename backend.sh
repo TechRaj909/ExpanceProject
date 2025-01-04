@@ -51,8 +51,15 @@ else
 echo -e "user expance already existed"
 fi
 
-mkdir /app &>>$LOG_FILE_NAME
-VALIDATE $? "mkdir app"
+cd /app
+if [ $? -ne 0 ]
+then
+    mkdir /app &>>$LOG_FILE_NAME
+    VALIDATE $? "mkdir app"
+else
+    echo -e "already app folder existed"
+fi    
+
 
 curl -o /tmp/backend.zip https://expense-builds.s3.us-east-1.amazonaws.com/expense-backend-v2.zip &>>$LOG_FILE_NAME
 VALIDATE $? "download nodejs"
